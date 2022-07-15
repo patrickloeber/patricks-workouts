@@ -65,7 +65,7 @@ def display_workout_summary_week():
         weekdays.append(first_of_week + dt.timedelta(days=i))
     weekworkouts = [0] * 7
     for _, row in wos.iterrows():
-        d = row["creationDate"].to_pydatetime().date()
+        d = row["endDate"].to_pydatetime().date()
         try:
             idx = weekdays.index(d)
             weekworkouts[idx] = int(round(row["duration"]))
