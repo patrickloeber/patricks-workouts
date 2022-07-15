@@ -3,6 +3,11 @@ import workout_service
 import matplotlib.pyplot as plt
 import datetime as dt
 
+st.set_page_config(
+     page_title="Patrick's Workouts 🏋🤸🏃‍♂️",
+     page_icon="🏃‍♂️"
+)
+
 st.title("Patrick's Workouts 🏋🤸🏃‍♂️")
 
 st.markdown(" My workouts. Tracked with my Apple Watch⌚ and analyzed with Python 💛")
