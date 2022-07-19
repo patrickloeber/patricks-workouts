@@ -23,7 +23,7 @@ st.markdown("Code: [GitHub Link](https://github.com/python-engineer/patricks-wor
 
 st.markdown("Build a Fitness App with Python that sends daily workouts: [Tutorial](https://patloeber.com/fitness-app-harperdb)")
 
-st.markdown(f'*Last synced: {last_edited.strftime("%Y-%m-%d, %H:%M")}*')
+st.markdown(f'*Last synced: {last_edited.strftime("%Y-%m-%d")}*')
 
 def display_last_workout():
     last_workout = workout_service.get_last_workout()
