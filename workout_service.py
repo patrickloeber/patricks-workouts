@@ -3,7 +3,7 @@ import datetime as dt
 
 
 # This file must exist!
-filename="workouts.pickle"
+filename = "workouts.pickle"
 workouts_df = pd.read_pickle(filename)
 
 def get_workouts():

@@ -2,11 +2,16 @@ import streamlit as st
 import workout_service
 import matplotlib.pyplot as plt
 import datetime as dt
+import os
 
 st.set_page_config(
      page_title="Patrick's Workouts 🏋🤸🏃‍♂️",
      page_icon="🏃‍♂️"
 )
+
+filename = "workouts.pickle"
+file_stat = os.stat(filename)
+last_edited = dt.datetime.fromtimestamp(file_stat.st_ctime)
 
 st.title("Patrick's Workouts 🏋🤸🏃‍♂️")
 
@@ -14,7 +19,11 @@ st.markdown(" My workouts. Tracked with my Apple Watch⌚ and analyzed with Pyth
 
 st.markdown("Follow me: [Twitter](https://twitter.com/python_engineer) | [YouTube](https://www.youtube.com/c/PythonEngineer)")
 
+st.markdown("Code: [GitHub Link](https://github.com/python-engineer/patricks-workouts/)")
+
 st.markdown("Build a Fitness App with Python that sends daily workouts: [Tutorial](https://patloeber.com/fitness-app-harperdb)")
+
+st.markdown(f'*Last synced: {last_edited.strftime("%Y-%m-%d, %H:%M")}*')
 
 def display_last_workout():
     last_workout = workout_service.get_last_workout()
