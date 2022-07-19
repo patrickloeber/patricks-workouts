@@ -30,7 +30,7 @@ def display_last_workout():
 
     st.markdown("## Last Workout👟")
     
-    date = last_workout.startDate.item()
+    date = last_workout.endDate.item()
     dur = last_workout.duration.item()
     durUnit = last_workout.durationUnit.item()
     totalEnergyBurned = last_workout.totalEnergyBurned.item()
@@ -50,7 +50,7 @@ def display_last_workout():
 def display_workout_summary(wos):    
     for idx in reversed(wos.index):
         workout = wos.loc[idx]
-        date = workout.startDate
+        date = workout.endDate
         dur = workout.duration
         durUnit = workout.durationUnit
         totalEnergyBurned = workout.totalEnergyBurned
@@ -88,7 +88,6 @@ def display_workout_summary_week():
     plt.xlabel("Week")
     plt.ylabel("Duration")
     st.pyplot(fig)
-    
     
     display_workout_summary(wos)
     
