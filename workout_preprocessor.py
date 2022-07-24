@@ -6,6 +6,7 @@ Run this file separately before starting the app.
 """
 import zipfile
 import shutil
+import os
 import pandas as pd
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -73,6 +74,8 @@ def create_and_save_optimized_file(output_file, xml_file):
 
 
 if __name__ == "__main__":
+    print('Do workout preprocessing...')
+
     path = Path("./workouts.pickle")
 
     if path.is_file():
@@ -85,5 +88,6 @@ if __name__ == "__main__":
 
     shutil.rmtree("temp")
 
+    os.remove("./Export.zip")
 
     
